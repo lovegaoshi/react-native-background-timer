@@ -1,3 +1,5 @@
+import com.android.Version
+
 apply plugin: 'com.android.library'
 
 def safeExtGet(prop, fallback) {
@@ -6,7 +8,9 @@ def safeExtGet(prop, fallback) {
 
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', 28)
-    
+    if (agpVersion.tokenize('.')[0].toInteger() >= 7) {
+      namespace "com.ocetnik.rnbktimer"
+    }
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 16)
         targetSdkVersion safeExtGet('targetSdkVersion', 28)
