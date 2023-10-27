@@ -89,6 +89,16 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
         }, (long) timeout);
     }
 
+    @ReactMethod
+    public void addListener(String eventName) {
+
+    }
+
+    @ReactMethod
+    public void removeListeners(Integer count) {
+
+    }
+
     /*@ReactMethod
     public void clearTimeout(final int id) {
         // todo one day..
